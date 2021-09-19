@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AssignmentNicolas</string>
+    <string name="buttonRollNextDice">Roll Next Dice</string>
+    <string name="buttonRollAllDices">Roll All Dices</string>
+    <string name="diceNumberTextView">1</string>
+    <string name="buttonPlus">+</string>
+    <string name="buttonMinus">-</string>
+    <string name="diceOne">ImageDiceOne</string>
+    <string name="diceTwo">ImageDiceTwo</string>
+    <string name="diceThree">ImageDiceThree</string>
+    <string name="diceFour">ImageDiceFour</string>
+    diceFour</resources>

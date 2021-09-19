@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF4E5"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonRollNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#D50908"
+        android:onClick="btnRollNext"
+        android:text="@string/buttonRollNextDice"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMinus"
+        app:layout_constraintEnd_toStartOf="@+id/diceNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/buttonMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="49dp"
+        android:backgroundTint="#D50908"
+        android:enabled="false"
+        android:onClick="btnMinus"
+        android:text="@string/buttonMinus"
+        app:layout_constraintEnd_toStartOf="@+id/diceNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRollNext"
+        tools:ignore="DuplicateSpeakableTextCheck,OnClick" />
+
+    <Button
+        android:id="@+id/buttonPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="#D50908"
+        android:onClick="btnPlus"
+        android:text="@string/buttonPlus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/diceNumber"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRollAll"
+        tools:ignore="OnClick" />
+
+    <TextView
+        android:id="@+id/diceNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/diceNumberTextView"
+        android:textColor="#D50908"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRollAll" />
+
+    <Button
+        android:id="@+id/buttonRollAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#D50908"
+        android:onClick="btnRollAllDices"
+        android:text="@string/buttonRollAllDices"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPlus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/diceNumber"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+
+    <ImageView
+        android:id="@+id/diceOne"
+        android:layout_width="149dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="54dp"
+        android:contentDescription="@string/diceOne"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/diceNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMinus"
+        app:srcCompat="@drawable/dice" />
+
+    <ImageView
+        android:id="@+id/diceTwo"
+        android:layout_width="149dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="54dp"
+        android:contentDescription="@string/diceTwo"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/diceNumber"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlus"
+        app:srcCompat="@drawable/dice" />
+
+    <ImageView
+        android:id="@+id/diceThree"
+        android:layout_width="149dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="54dp"
+        android:contentDescription="@string/diceThree"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/diceNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diceOne"
+        app:srcCompat="@drawable/dice" />
+
+    <ImageView
+        android:id="@+id/diceFour"
+        android:layout_width="149dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="54dp"
+        android:contentDescription="@string/diceFour"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/diceNumber"
+        app:layout_constraintTop_toBottomOf="@+id/diceTwo"
+        app:srcCompat="@drawable/dice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
