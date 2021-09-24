@@ -22,7 +22,7 @@ class history : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this@history)
         historyadapter = RecyclerAdapter()
 
-       /* val swipeGesture = object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT)
+        val swipeGesture = object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT)
         {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean
             {
@@ -44,11 +44,11 @@ class history : AppCompatActivity() {
             }
         }
         val touchHelper = ItemTouchHelper(swipeGesture)
-        touchHelper.attachToRecyclerView(recyclerView)
+        touchHelper.attachToRecyclerView(recyclerview)
 
         recyclerview.adapter=historyadapter
         historyadapter.sbmt(ResultsList.results)
-*/
+
     }
     fun btnRemove(sender: View){
         ResultsList.results.clear()
