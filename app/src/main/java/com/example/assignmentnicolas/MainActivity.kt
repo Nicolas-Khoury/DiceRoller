@@ -1,5 +1,6 @@
 package com.example.assignmentnicolas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.RecyclerView
 import kotlin.random.Random
 import kotlin.random.nextInt
 
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     }
     //----------------------------------------------------------------------------------
     private val numbers = arrayOf(0,0,0,0)
+    private val results :MutableList<diceHistoryType> = ResultsList.results
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
     fun btnRollNext(Sender : View){
@@ -57,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         for(i in 0 until diceNumInt) {
 
             if (numbers[diceNumInt-1]!=0) {
+
                 for (a in 0..3) {
                    numbers[a]=0
                    showImageDice( numbers[a],arrayI[a])
@@ -66,6 +70,9 @@ class MainActivity : AppCompatActivity() {
                 numbers[i]=roll()
                 showImageDice(numbers[i],arrayI[i])
                 break}
+            }
+            if (numbers[diceNumInt-1]!=0) {
+                savingResults("Roll Next Dice",diceNumInt)
             }
         }
 
@@ -81,7 +88,7 @@ class MainActivity : AppCompatActivity() {
             numbers[i]=roll()
             showImageDice(numbers[i],arrayI[i])
         }
-
+        savingResults("Roll All Dices",diceNumInt)
     }
     //----------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------
@@ -116,4 +123,24 @@ class MainActivity : AppCompatActivity() {
         diceNum.text = oldNumInt.toString()
     }
     //----------------------------------------------------------------------------------
+    private fun savingResults(type:String,num:Int)
+    {
+        val temp = mutableListOf<Int>()
+
+        for (n in numbers) {
+            temp.add(n)
+        }
+        results.add(diceHistoryType(temp,type,num))
+
+    }
+    //----------------------------------------------------------------------------------
+    fun displayHistoryList(sender: View)
+    {
+        val intent = Intent(this, history::class.java)
+
+        startActivity(intent)
+
+    }
+
+
 }
