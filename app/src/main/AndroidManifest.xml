@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AssignmentNicolas">
         <activity
+            android:name=".elementlayout"
+            android:exported="true" />
+        <activity
+            android:name=".element"
+            android:exported="true" />
+        <activity
+            android:name=".history"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsHistory"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
