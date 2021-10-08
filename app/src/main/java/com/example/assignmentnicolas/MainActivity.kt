@@ -3,12 +3,18 @@ package com.example.assignmentnicolas
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 import kotlin.random.Random
 import kotlin.random.nextInt
 
@@ -131,7 +137,7 @@ class MainActivity : AppCompatActivity() {
             temp.add(n)
         }
         results.add(diceHistoryType(temp,type,num))
-
+        post(temp.toString(),type,num)
     }
     //----------------------------------------------------------------------------------
     fun displayHistoryList(sender: View)
@@ -140,6 +146,26 @@ class MainActivity : AppCompatActivity() {
 
         startActivity(intent)
 
+    }
+
+    private fun post(data:String,typeroll:String,rollcount:Int)
+    {
+        val queue : RequestQueue= Volley.newRequestQueue(this)
+        val url = "https://615f565cf7254d00170680f1.mockapi.io/Results"
+
+        Log.d("res", data)
+
+        val postRequest = JsonObjectRequest(
+            Request.Method.POST, url,
+            JSONObject("{ Results: $data,typeroll:\"$typeroll\" ,rollcount:\"$rollcount\"  }"),
+            {
+                    response -> Log.d("1", response.toString())
+            },
+            {
+                    error -> Log.d("0", error.toString())
+            })
+
+        queue.add(postRequest)
     }
 
 
