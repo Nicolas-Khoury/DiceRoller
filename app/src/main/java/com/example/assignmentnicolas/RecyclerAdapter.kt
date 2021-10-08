@@ -15,6 +15,9 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
         diceList.removeAt(position)
         notifyItemRemoved(position)
     }
+    fun change(){
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
     {
