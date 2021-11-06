@@ -148,6 +148,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun openCamera(Sender: View)
+    {
+        val intent = Intent(this, camera::class.java)
+        startActivity(intent)
+    }
+
+    fun openMap(Sender: View)
+    {
+        val intent = Intent(this, MapsActivity::class.java)
+        startActivity(intent)
+    }
+
     private fun post(data:String,typeroll:String,rollcount:Int)
     {
         val queue : RequestQueue= Volley.newRequestQueue(this)
