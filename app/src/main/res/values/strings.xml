@@ -9,5 +9,6 @@
     <string name="diceTwo">ImageDiceTwo</string>
     <string name="diceThree">ImageDiceThree</string>
     <string name="diceFour">ImageDiceFour</string>
+    <string name="title_activity_maps">MapsActivity</string>
     diceFour
 </resources>
