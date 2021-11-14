@@ -1,6 +1,10 @@
 package com.example.assignmentnicolas
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -25,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        createChannel()
         arrayI.add(findViewById(R.id.diceOne))
         arrayI.add(findViewById(R.id.diceTwo))
         arrayI.add(findViewById(R.id.diceThree))
@@ -179,6 +183,18 @@ class MainActivity : AppCompatActivity() {
 
         queue.add(postRequest)
     }
-
+    private fun createChannel(){
+        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
+            val name = "super cool channel name"
+            val descriptionText = "informative channel description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(Notification.CHANNEL_ID,name,importance).apply{
+                description = descriptionText
+            }
+            //Register the channel with the system
+            val notificaionManager:NotificationManager= getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            notificaionManager.createNotificationChannel(channel)
+        }
+    }
 
 }

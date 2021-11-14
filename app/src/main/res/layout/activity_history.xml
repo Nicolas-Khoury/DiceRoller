@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEF4E5"
     tools:context=".history">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewHistory"
-        android:layout_width="409dp"
-        android:layout_height="567dp"
+        android:layout_width="406dp"
+        android:layout_height="543dp"
         android:layout_marginTop="36dp"
+        android:background="#FEF4E5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,12 +23,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="159dp"
-        android:layout_marginBottom="49dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#D50908"
         android:onClick="btnRemove"
         android:text="Remove All"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewHistory" />
 </androidx.constraintlayout.widget.ConstraintLayout>
