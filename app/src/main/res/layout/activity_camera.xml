@@ -8,34 +8,30 @@
     tools:context=".camera">
 
     <Button
-        android:id="@+id/gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="103dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="147dp"
-        android:backgroundTint="#D50908"
-        android:text="Upload Picture"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/camerabutton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pictureview" />
-
-    <Button
         android:id="@+id/camerabutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="103dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="147dp"
+        android:layout_marginBottom="88dp"
         android:backgroundTint="#D50908"
         android:text="Take Picture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gallery"
-        app:layout_constraintTop_toBottomOf="@+id/pictureview" />
+        app:layout_constraintStart_toEndOf="@+id/gallery" />
+
+    <Button
+        android:id="@+id/gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="88dp"
+        android:backgroundTint="#D50908"
+        android:text="Upload Picture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/camerabutton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/pictureview"
@@ -44,8 +40,11 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="133dp"
         android:layout_marginEnd="50dp"
+        android:layout_marginBottom="162dp"
+        app:layout_constraintBottom_toTopOf="@+id/camerabutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_background" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
