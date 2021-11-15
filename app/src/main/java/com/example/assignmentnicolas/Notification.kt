@@ -15,10 +15,6 @@ class Notification: FirebaseMessagingService()
         val CHANNEL_ID = "1"
     }
 
-    override fun onNewToken(token: String)
-    {
-        super.onNewToken(token);
-    }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage)
     {
